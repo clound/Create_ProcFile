@@ -11,9 +11,9 @@
 #define IS_LEAP_YEAR(year) (!(year%100)&&!(year%400)||(year%100)&&!(year%4))//判断闰年
 int mon[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 struct timeval tv;	//struct timeval 为设定时间或获取时间时使用的结构体，tv_sec 变量把当前时间换算为秒，tv_usec 值指定或获取 tv_usec 无法表示的 us 单位经过的时间。
-	struct rtc_time tm;
-	int year,month,day,hour;
-	int carry = 0;
+struct rtc_time tm;
+int year,month,day,hour;
+int carry = 0;
 static int hello_proc_show(struct seq_file *m, void *v)
 {
 	seq_printf(m,"GMT time :%d-%d-%d %d:%d:%d\n",tm.tm_year+1900,tm.tm_mon+1,tm.tm_mday,tm.tm_hour,tm.tm_min,tm.tm_sec);//格林尼治时间
